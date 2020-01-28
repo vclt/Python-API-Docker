@@ -1,0 +1,6 @@
+connexion[swagger-ui]==2.*
+Flask==1.*
+Flask-SQLAlchemy==2.*
+requests==2.*
+SQLAlchemy==1.*
+waitress==1.*

@@ -1,0 +1,137 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: 'Sensyne test API'
+  description: "API to allow backend testing"
+consumes:
+  - application/json
+produces:
+  - application/json
+basePath: /v1
+paths:
+  /products:
+    get:
+      operationId: qa_app.controller.products_list
+      description: Return a list of products
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Products'
+        404:
+          description: Product not found
+  /product:
+    post:
+      operationId: qa_app.controller.create_product
+      parameters:
+        - name: productDetails
+          in: body
+          description: JSON object containing product details
+          required: true
+          schema:
+            $ref: '#/definitions/ProductCreate'
+      responses:
+          200: 
+            description: Successful response
+            schema:
+              $ref: '#/definitions/Product'
+          
+  /product/{product_code}:
+    get:
+      operationId: qa_app.controller.get_product
+      description: Return a single product
+      parameters:
+        - $ref: '#/parameters/ProductCode'
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Product"
+        404:
+          description: Not found
+    put:
+      operationId: qa_app.controller.update_product
+      description: Update a product
+      parameters:
+        - $ref: '#/parameters/ProductCode'
+        - name: productDetails
+          description: JSON object containing product details
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/ProductUpdate'
+
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Product"
+        404:
+          description: Not found
+    delete:
+      operationId: qa_app.controller.delete_product
+      description: Delete a product
+      parameters:
+        - $ref: '#/parameters/ProductCode'
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Product"
+        404:
+          description: Not found
+      
+parameters:
+  ProductCode:
+    name: product_code
+    type: string
+    in: path
+    description: the product_code to look for
+    required: true
+definitions:
+  Product:
+    description: A product
+    properties:
+      product_code:
+        type: integer
+        description: the id of the product
+        example: 001
+      name:
+        type: string
+        description: the name of the product
+        example: Lavender heart
+      product_price:
+        type: number
+        description: price, in pounds
+        example: 9.25
+  Products:
+    type: array
+    items: 
+      $ref: '#/definitions/Product'
+  ProductUpdate:
+    title: 'Product update body'
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of the product
+        example: 'Lavender heart'
+      price:
+        type: number
+        description: Price of the product
+        example: 9.95
+  ProductCreate:
+    title: 'Product create body'
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of the product
+        example: 'Lavender heart'
+      price:
+        type: number
+        description: Price of the product
+        example: 9.95
+    required:
+      - name
+      - price

@@ -1,0 +1,7 @@
+*~
+*.pyc
+*.zip
+
+.idea/
+env/
+venv/
