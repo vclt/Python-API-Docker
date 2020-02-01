@@ -1,10 +1,12 @@
 {
   "name": "package",
   "version": "1.0.0",
-  "description": "",
+  "description": "A visually appealing html reporter for mocha",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/task.js"
+    "test":"mocha -R good-mocha-html-reporter ./test/task.js -p ./test/report/report.html",
+    "test_xml": "mocha ./test/task.js --reporter mocha-junit-reporter --reporter-options mochaFile=./test/report/results.xml",
+    "jtest": "jenkins-mocha ./test/task.js"
   },
   "author": "Ravindra",
   "license": "ISC",
@@ -12,14 +14,21 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "expect": "^25.1.0",
-    "mocha": "^7.0.1"
+    "jenkins-mocha": "^8.0.0",
+    "mocha": "^7.0.1",
+    "mocha-junit-reporter": "^1.23.3"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "except": "^0.1.3",
     "express": "^4.17.1",
+    "good-mocha-html-reporter": "^2.0.1",
     "joi": "^14.3.1",
     "request": "^2.88.0",
     "supertest": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vclt/Python-API-Docker.git"
   }
 }
