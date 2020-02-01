@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.8810" tests="8" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-02-01T17:47:15" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Tasks API" timestamp="2020-02-01T17:47:15" tests="0" file="C:\Ravindra\PythonAPITest\test\task.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="GET /v1/products" timestamp="2020-02-01T17:47:15" tests="2" file="C:\Ravindra\PythonAPITest\test\task.js" time="0.1550" failures="0">
+    <testcase name="Tasks API GET /v1/products It Shoud GET all Products" time="0.1210" classname="It Shoud GET all Products">
+    </testcase>
+    <testcase name="Tasks API GET /v1/products It Shoud GET Specified Product" time="0.0340" classname="It Shoud GET Specified Product">
+    </testcase>
+  </testsuite>
+  <testsuite name="POST product" timestamp="2020-02-01T17:47:16" tests="2" file="C:\Ravindra\PythonAPITest\test\task.js" time="0.2950" failures="0">
+    <testcase name="Tasks API POST product It Shoud POST Specified Product" time="0.2730" classname="It Shoud POST Specified Product">
+    </testcase>
+    <testcase name="Tasks API POST product It Shoud GET all Products" time="0.0220" classname="It Shoud GET all Products">
+    </testcase>
+  </testsuite>
+  <testsuite name="PUT product" timestamp="2020-02-01T17:47:16" tests="2" file="C:\Ravindra\PythonAPITest\test\task.js" time="0.2180" failures="0">
+    <testcase name="Tasks API PUT product It Shoud PUT Specified Product" time="0.1480" classname="It Shoud PUT Specified Product">
+    </testcase>
+    <testcase name="Tasks API PUT product It Shoud GET all Products" time="0.0700" classname="It Shoud GET all Products">
+    </testcase>
+  </testsuite>
+  <testsuite name="DELETE product" timestamp="2020-02-01T17:47:16" tests="2" file="C:\Ravindra\PythonAPITest\test\task.js" time="0.2130" failures="0">
+    <testcase name="Tasks API DELETE product It Shoud DELETE Specified Product" time="0.1220" classname="It Shoud DELETE Specified Product">
+    </testcase>
+    <testcase name="Tasks API DELETE product It Shoud GET all Products" time="0.0910" classname="It Shoud GET all Products">
+    </testcase>
+  </testsuite>
+</testsuites>
